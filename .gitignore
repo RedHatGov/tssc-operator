@@ -1,2 +1,5 @@
+bundle/
+bundle.Dockerfile
+.idea/
 bin/
 *.log

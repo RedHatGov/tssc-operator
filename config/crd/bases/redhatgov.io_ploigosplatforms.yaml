@@ -133,6 +133,42 @@ spec:
                         description: Describes the service used for source control.
                         type: object
                         properties:
+                          gitlab:
+                            description: Configuration for a GitLab instance.
+                            type: object
+                            properties:
+                              enabled:
+                                description: Whether this service should be enabled.
+                                type: boolean
+                                default: true
+                              externalProperties:
+                                description: |
+                                  Properties for accessing an external instance of this service.
+                                  Omit this object to leverage an instance that is fully-managed
+                                  by this operator.
+                                type: object
+                                properties:
+                                  url:
+                                    description: URL to access this instance.
+                                    type: string
+                                  username:
+                                    description: Username to access this instance.
+                                    type: string
+                                  password:
+                                    description: Password to access this instance.
+                                    type: string
+                                  domain:
+                                    description: Domain host for this instance.
+                                    type: string
+                                  email:
+                                    description: Admin email address for this instance.
+                                    type: string
+                                required:
+                                  - url
+                                  - username
+                                  - password
+                                  - domain
+                                  - email
                           gitea:
                             description: Configuration for a Gitea instance.
                             type: object
